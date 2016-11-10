@@ -1,0 +1,6 @@
+{
+  "name": "Budget and Project Updates",
+  "description": "Separating budget and project information based on https://github.com/open-contracting/standard/issues/400 and requirements of the PPP extension.",
+  "compatibility": ">=1.0.0",
+  "dependencies": []
+}
