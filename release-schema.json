@@ -1,5 +1,12 @@
 {
   "definitions": {
+    "Planning": {
+      "properties": {
+        "project": {
+          "$ref": "#/definitions/Project"
+        }
+      }
+    },
     "Project": {
       "type": "object",
       "title": "Project Information",
