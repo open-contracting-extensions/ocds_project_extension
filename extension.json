@@ -1,6 +1,9 @@
 {
   "name": "Budget and Project Updates",
-  "description": "Separating budget and project information based on https://github.com/open-contracting/standard/issues/400 and requirements of the PPP extension.",
-  "compatibility": ">=1.0.0",
+  "description": "This extension introduces a projects block in 'planning' which can be used to give total project value, and provide project-level information, alongside existing fields in the planning/budget section for details of the budget allocated to this specific contracting process.",
+  "compatibility": ">=1.1.0",
+  "documentationUrl": {
+    "en": "https://github.com/open-contracting/ocds_budget_projects_extension/"
+   },
   "dependencies": []
 }
