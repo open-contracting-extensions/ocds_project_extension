@@ -49,3 +49,7 @@ In the OCDS for PPPs profile, this is further extended with sector and location 
 * Updated version to maintain conformance with OCDS 1.1, removing the properties in the extension that deleted ```planning/budget/project``` and ```planning/budget/projectID```.
 
 * Removing unnecessary mergeStrategy and pattern property schema elements
+
+## Issues
+
+Report issues for this extension in the [ocds-extensions repository](https://github.com/open-contracting/ocds-extensions/issues), putting the extension's name in the issue's title.
