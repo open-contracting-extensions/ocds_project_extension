@@ -57,6 +57,14 @@ Field/Object | Usage
 
 ## Changelog
 
+### 2018-04-26
+
+* Add removed field descriptions to guidance section of readme
+
+### 2017-12-29
+
+* Remove repeated descriptions for fields in OCDS core from extension schema
+
 ### 2017-07-08
 
 * Updated version to maintain conformance with OCDS 1.1, removing the properties in the extension that deleted `planning/budget/project` and `planning/budget/projectID`.
