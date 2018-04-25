@@ -33,11 +33,27 @@ In the OCDS for PPPs profile, this is further extended with sector and location 
 
 ## Documentation
 
+The extension introduces the following fields:
+
 ```eval_rst
 .. extensiontable::
    :extension: budget_project
    :exclude_definitions:
 ```
+
+## Guidance
+
+Users of this extension should follow the below guidance on the usage of fields and objects which are included in the core OCDS schema:
+
+Field/Object | Usage
+--- | ---
+`budget` | This section contains basic information about the budget estimated for, or allocated to, this contracting process at the present time. Further documentation and data about how budgets have been allocated to a contracting process should be published outside of OCDS data, according to the best available standards.
+`budget/id` | Wherever possible, this identifier should be possible to cross-reference against formal budget documents.
+`budget/description` |  A short free text description of the budget allocation for this contracting process. This may be used to provide human readable information on the budget category allocated to this contracting process, and/or, information about the nature and source of the allocation (e.g. conditional, confirmed; any official authorizations given to the budget allocation).
+`budget/amount` | The total value of budget allocations for this contracting process. The budget breakdown extension can be used to provide data for multiple budget sources, or to split the budget by years or other periods.
+`budget/project` | The name of the project that through which this contracting process is funded. Detailed information should be provided in the extended projectDetail section.
+`budget/projectID` | An external identifier for the project that this contracting process forms part of. Required for legacy compatibility with OCDS core.
+`budget/uri` | A URI pointing directly to records about the related budget for this contracting process. Where possible this URI should return machine and human-readable representations of the data.
 
 ## Changelog
 
