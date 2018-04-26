@@ -13,6 +13,7 @@
       "description": "The project section can be used to describe the relationship between this contracting process and a project or programme of work.",
       "properties": {
         "id": {
+          "title": "Project Identifier",
           "description": "An externally provided identifier for the project. This might be drawn from a projects register, or may be based on the canonical version of a project name. Project IDs should be unique to a publisher. URIs can be used. ",
           "type": [
             "string",
@@ -36,6 +37,7 @@
           ]
         },
         "totalValue": {
+          "title": "Total project value",
           "description": "The total anticipated value of the project over it's lifetime. ",
           "$ref": "#/definitions/Value"
         },
