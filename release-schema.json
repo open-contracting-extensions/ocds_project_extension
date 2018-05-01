@@ -9,11 +9,11 @@
     },
     "Project": {
       "type": "object",
-      "title": "Project Information",
+      "title": "Project information",
       "description": "The project section can be used to describe the relationship between this contracting process and a project or programme of work.",
       "properties": {
         "id": {
-          "title": "Project Identifier",
+          "title": "Project identifier",
           "description": "An externally provided identifier for the project. This might be drawn from a projects register, or may be based on the canonical version of a project name. Project IDs should be unique to a publisher. URIs can be used. ",
           "type": [
             "string",
@@ -21,7 +21,7 @@
           ]
         },
         "title": {
-          "title": "Project Title",
+          "title": "Project title",
           "description": "The name of the project to which this contracting process relates. Some organizations maintain a registry of projects, and the data should use the name by which the project is known in that registry. ",
           "type": [
             "string",
