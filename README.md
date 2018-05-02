@@ -43,27 +43,27 @@ The extension introduces the following fields:
 
 ## Guidance
 
-Users of this extension should follow the below guidance on the usage of fields which are included in the core OCDS schema:
+Users of this extension should follow the additional guidance below on the usage of fields which are also part of the core OCDS schema:
 
 ```eval_rst
 =============================== =====
-Field                           Usage
+Field                           Guidance
 =============================== =====
-``planning/budget``             This section contains basic information about the budget estimated for, or allocated to, this contracting process at the present time. Further documentation and data about how budgets have been allocated to a contracting process should be published outside of OCDS data, according to the best available standards.
+``planning/budget``             This section contains basic information about the specific budget estimated for, or allocated to, this contracting process. This field should not be used to report the total value of the budget line which funds this contracting process.
 ``planning/budget/id``          Wherever possible, this identifier should be possible to cross-reference against formal budget documents.
-``planning/budget/description`` A short free text description of the budget allocation for this contracting process. This may be used to provide human readable information on the budget category allocated to this contracting process, and/or, information about the nature and source of the allocation (e.g. conditional, confirmed; any official authorizations given to the budget allocation).
-``planning/budget/amount``      The total value of budget allocations for this contracting process. The budget breakdown extension can be used to provide data for multiple budget sources, or to split the budget by years or other periods.
-``planning/budget/project``     The name of the project that through which this contracting process is funded. Detailed information should be provided in the extended projectDetail section.
-``planning/budget/projectID``   An external identifier for the project that this contracting process forms part of. Required for legacy compatibility with OCDS core.
-``planning/budget/uri``         A URI pointing directly to records about the related budget for this contracting process. Where possible this URI should return machine and human-readable representations of the data.
+``planning/budget/description`` This field may also be used to provide information about the nature of the budget allocation, e.g. conditional, confirmed; any official authorizations given to the allocation.
+``planning/budget/amount``      In addition to describing multi-source budgets, the budget breakdown extension can also be used to provide data to split the budget by years or other periods.
+``planning/budget/project``     Detailed information about the project which funds this contracting process should be provided in the planning/project section.
+``planning/budget/projectID``   This field is required for legacy compatibility with OCDS core.
+``planning/budget/uri``         Where possible this URI should return machine *and* human-readable representations of budget data.
 =============================== =====
 ```
 
 ## Changelog
 
-### 2018-04-26
+### 2018-05-03
 
-* Add removed field descriptions to guidance section of readme
+* Add guidance section based on schema descriptions moved in previous update
 
 ### 2017-12-29
 
