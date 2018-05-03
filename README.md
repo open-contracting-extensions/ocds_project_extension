@@ -43,20 +43,36 @@ The extension introduces the following fields:
 
 ## Guidance
 
-Users of this extension should follow the additional guidance below on the usage of fields which are also part of the core OCDS schema:
+Users of this extension should follow the additional guidance below on the usage of fields which are also part of the core OCDS schema. The field's description from the core OCDS schema v1.1.3 is included for convenience; please refer to the [standard's documentation](http://standard.open-contracting.org) for more recent descriptions.
 
 ```eval_rst
-=============================== =====
-Field                           Guidance
-=============================== =====
-``planning/budget``             This section contains basic information about the specific budget estimated for, or allocated to, this contracting process. This field should not be used to report the total value of the budget line which funds this contracting process.
-``planning/budget/id``          Wherever possible, this identifier should be possible to cross-reference against formal budget documents.
-``planning/budget/description`` This field may also be used to provide information about the nature of the budget allocation, e.g. conditional, confirmed; any official authorizations given to the allocation.
-``planning/budget/amount``      In addition to describing multi-source budgets, the budget breakdown extension can also be used to provide data to split the budget by years or other periods.
-``planning/budget/project``     Detailed information about the project which funds this contracting process should be provided in the planning/project section.
-``planning/budget/projectID``   This field is required for legacy compatibility with OCDS core.
-``planning/budget/uri``         Where possible this URI should return machine *and* human-readable representations of budget data.
-=============================== =====
+.. list-table::
+    :header-rows: 1
+
+    * - Field
+      - OCDS schema description
+      - Extension guidance
+    * - ``planning/budget``
+      - This section contain information about the budget line, and associated projects, through which this contracting process is funded. It draws upon data model of the [Fiscal Data Package](http://fiscal.dataprotocols.org/), and should be used to cross-reference to more detailed information held using a Budget Data Package, or, where no linked Budget Data Package is available, to provide enough information to allow a user to manually or automatically cross-reference with another published source of budget and project information.
+      - This section contains basic information about the specific budget estimated for, or allocated to, this contracting process. This field should not be used to report the total value of the budget line which funds this contracting process.
+    * - ``planning/budget/id``
+      - An identifier for the budget line item which provides funds for this contracting process. This identifier should be possible to cross-reference against the provided data source.
+      - Wherever possible, this identifier should be possible to cross-reference against formal budget documents.
+    * - ``planning/budget/description``
+      - A short free text description of the budget source. May be used to provide the title of the budget line, or the programme used to fund this project.
+      - This field may also be used to provide information about the nature of the budget allocation, e.g. conditional, confirmed; any official authorizations given to the allocation.
+    * - ``planning/budget/amount``
+      - The value reserved in the budget for this contracting process. A negative value indicates anticipated income to the budget as a result of this contracting process, rather than expenditure. Where the budget is drawn from multiple sources, the budget breakdown extension can be used.
+      - In addition to describing multi-source budgets, the budget breakdown extension can also be used to provide data to split the budget by years or other periods.
+    * - ``planning/budget/project``
+      - The name of the project that through which this contracting process is funded (if applicable). Some organizations maintain a registry of projects, and the data should use the name by which the project is known in that registry. No translation option is offered for this string, as translated values can be provided in third-party data, linked from the data source above.
+      - Detailed information about the project which funds this contracting process should be provided in the planning/project section.
+    * - ``planning/budget/projectID``
+      - An external identifier for the project that this contracting process forms part of, or is funded via (if applicable). Some organizations maintain a registry of projects, and the data should use the identifier from the relevant registry of projects.
+      - This field is required for legacy compatibility with OCDS core.
+    * - ``planning/budget/uri``
+      - A URI pointing directly to a machine-readable record about the budget line-item or line-items that fund this contracting process. Information may be provided in a range of formats, including using IATI, the Open Fiscal Data Standard or any other standard which provides structured data on budget sources. Human readable documents can be included using the planning.documents block.
+      - Where possible this URI should return machine *and* human-readable representations of budget data.
 ```
 
 ## Changelog
