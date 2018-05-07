@@ -54,16 +54,15 @@ Users of this extension should follow the additional guidance below on the usage
       - Extension guidance
     * - ``planning/budget``
       - This section contain information about the budget line, and associated projects, through which this contracting process is funded. It draws upon data model of the [Fiscal Data Package](http://fiscal.dataprotocols.org/), and should be used to cross-reference to more detailed information held using a Budget Data Package, or, where no linked Budget Data Package is available, to provide enough information to allow a user to manually or automatically cross-reference with another published source of budget and project information.
-      - This section contains basic information about the specific budget estimated for, or allocated to, this contracting process. This field should not be used to report the total value of the budget line which funds this contracting process.
     * - ``planning/budget/id``
       - An identifier for the budget line item which provides funds for this contracting process. This identifier should be possible to cross-reference against the provided data source.
-      - Wherever possible, this identifier should be possible to cross-reference against formal budget documents.
+      - This identifier should be possible to cross-reference against formal budget documents.
     * - ``planning/budget/description``
       - A short free text description of the budget source. May be used to provide the title of the budget line, or the programme used to fund this project.
       - This field may also be used to provide information about the nature of the budget allocation, e.g. conditional, confirmed, or any official authorizations given to the allocation.
     * - ``planning/budget/amount``
       - The value reserved in the budget for this contracting process. A negative value indicates anticipated income to the budget as a result of this contracting process, rather than expenditure. Where the budget is drawn from multiple sources, the budget breakdown extension can be used.
-      - In addition to describing multi-source budgets, the budget breakdown extension can also be used to provide data to split the budget by years or other periods.
+      - This field contains information about the specific budget estimated for, or allocated to, this contracting process and should not be used to report the total value of the budget line which funds this contracting process. In addition to describing multi-source budgets, the budget breakdown extension can also be used to provide data to split the budget by years or other periods.
     * - ``planning/budget/project``
       - The name of the project that through which this contracting process is funded (if applicable). Some organizations maintain a registry of projects, and the data should use the name by which the project is known in that registry. No translation option is offered for this string, as translated values can be provided in third-party data, linked from the data source above.
       - Detailed information about the project which funds this contracting process should be provided in the ``planning/project`` object.
