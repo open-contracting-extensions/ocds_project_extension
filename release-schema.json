@@ -3,7 +3,10 @@
     "Planning": {
       "properties": {
         "project": {
-          "type": "object",
+          "type": [
+            "object",
+            "null"
+          ],
           "title": "Project information",
           "description": "The project section can be used to describe the relationship between this contracting process and a project or programme of work.",
           "properties": {
