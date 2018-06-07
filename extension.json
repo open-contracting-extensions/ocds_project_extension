@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Budget and Project Updates"
+    "en": "Budget and Projects"
   },
   "description": {
-    "en": "This extension introduces a projects block in 'planning' which can be used to give total project value, and provide project-level information, alongside existing fields in the planning/budget section for details of the budget allocated to this specific contracting process."
+    "en": "Adds a project object to the planning object to describe the project to which the contracting process is related, including the total value of the project (not to be confused with the total value of the contracting process)."
   },
   "compatibility": [
     "1.1"
