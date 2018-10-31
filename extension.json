@@ -13,5 +13,8 @@
   ],
   "schemas": [
     "release-schema.json"
+  ],
+  "dependencies": [
+    "https://raw.githubusercontent.com/open-contracting/ocds_location_extension/master/extension.json"
   ]
 }
