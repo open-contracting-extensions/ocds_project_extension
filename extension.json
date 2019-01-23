@@ -6,7 +6,7 @@
     "en": "Adds a project object to the planning object to describe the project to which the contracting process is related, including the total value of the project (not to be confused with the total value of the contracting process)."
   },
   "documentationUrl": {
-    "en": "https://github.com/open-contracting/ocds_budget_projects_extension/"
+    "en": "https://extensions.open-contracting.org/en/extensions/budget_project/"
   },
   "compatibility": [
     "1.1"
