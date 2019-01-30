@@ -31,16 +31,6 @@ In the OCDS for PPPs profile, this is further extended with sector and location 
 }
 ```
 
-## Documentation
-
-The extension introduces the following fields:
-
-```eval_rst
-.. extensiontable::
-   :extension: budget_project
-   :exclude_definitions:
-```
-
 ## Guidance
 
 Users of this extension should follow the additional guidance below on the usage of fields which are also part of the core OCDS schema. The field's description from the core OCDS schema v1.1.3 is included for convenience; please refer to the [standard's documentation](http://standard.open-contracting.org) for more recent descriptions.
