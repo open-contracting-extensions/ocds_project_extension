@@ -66,17 +66,18 @@ Users of this extension should follow the additional guidance below on the usage
 
 ### 2018-05-03
 
-* Add guidance section based on schema descriptions moved in previous update
+* Add additional guidance on the use of OCDS fields in the context of this extension
 
 ### 2017-12-29
 
-* Remove repeated descriptions for fields in OCDS core from extension schema
+* Remove the repetition of OCDS fields in this extension
 
 ### 2017-07-08
 
-* Updated version to maintain conformance with OCDS 1.1, removing the properties in the extension that deleted `planning/budget/project` and `planning/budget/projectID`.
-
-* Removing unnecessary mergeStrategy and pattern property schema elements
+* Add multilingual support for `Project.title` fields
+* Remove multilingual support for non-existent `Project.source` and `Project.project` fields
+* Restore `Budget.project` and `Budget.projectID` fields
+* Remove obsolete `mergeStrategy` properties
 
 ## Issues
 
