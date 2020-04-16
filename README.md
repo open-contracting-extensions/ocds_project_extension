@@ -1,16 +1,13 @@
-# Project extension
+# Project
 
-In the core OCDS, project information is nested within the `budget` building block. However, in some cases, budget management, and project management systems are separate, and it may be important to separately specify:
+This extension adds a `project` object to the `planning` object.
 
-* The amount reserved in the budget for a specific contracting process;
+In OCDS, project information is nested under the [`planning.budget`](https://standard.open-contracting.org/latest/en/schema/reference/#budget) object. However, in some cases, budget management systems and project management systems are separate, and it might be important to separately specify:
 
-* The project the contract relates to, and the total value of that project;
+* The amount reserved in the budget for a specific contracting process
+* The project the contract relates to, and the total value of that project
 
-This is particularly important in cases of Public Private Partnership projects, or large infrastructure projects, where users may wish to track all the contracting processes related to a large-scale project, and to understand the individual contracts in the context of their contracting process and overall project values.
-
-This extension introduces a `project` object into the `planning` section.
-
-In the OCDS for PPPs profile, this is further extended with sector and location classifications.
+This is particularly important in cases of Public-Private Partnerships and large infrastructure projects, where users might want to track all the contracting processes related to the large-scale project, and to understand the individual contracts in the context of their contracting process and overall project values.
 
 ## Example
 
@@ -31,38 +28,11 @@ In the OCDS for PPPs profile, this is further extended with sector and location 
 }
 ```
 
-## Guidance
-
-Users of this extension should follow the additional guidance below on the usage of fields which are also part of the core OCDS schema. The field's description from the core OCDS schema v1.1.3 is included for convenience; please refer to the [standard's documentation](http://standard.open-contracting.org) for more recent descriptions.
-
-```eval_rst
-.. list-table::
-    :header-rows: 1
-
-    * - Field
-      - OCDS schema description
-      - Extension guidance
-    * - ``planning.budget.id``
-      - An identifier for the budget line item which provides funds for this contracting process. This identifier should be possible to cross-reference against the provided data source.
-      - "provided data source" refers to formal budget documents.
-    * - ``planning.budget.description``
-      - A short free text description of the budget source. May be used to provide the title of the budget line, or the programme used to fund this project.
-      - This field may also be used to provide information about the nature of the budget allocation, e.g. conditional, confirmed, or any official authorizations given to the allocation.
-    * - ``planning.budget.amount``
-      - The value reserved in the budget for this contracting process. A negative value indicates anticipated income to the budget as a result of this contracting process, rather than expenditure. Where the budget is drawn from multiple sources, the budget breakdown extension can be used.
-      - Or, the value estimated for, or allocated to, this contracting process in a budget. This field should not be used to report the total value of the budget line funding this contracting process. The budget breakdown extension can be used for both multi-source and multi-year budgets.
-    * - ``planning.budget.project``
-      - The name of the project that through which this contracting process is funded (if applicable). Some organizations maintain a registry of projects, and the data should use the name by which the project is known in that registry. No translation option is offered for this string, as translated values can be provided in third-party data, linked from the data source above.
-      - Detailed information about the project which funds this contracting process should be provided in the ``planning.project`` object.
-    * - ``planning.budget.projectID``
-      - An external identifier for the project that this contracting process forms part of, or is funded via (if applicable). Some organizations maintain a registry of projects, and the data should use the identifier from the relevant registry of projects.
-      - This field is required for legacy compatibility with OCDS core.
-    * - ``planning.budget.uri``
-      - A URI pointing directly to a machine-readable record about the budget line-item or line-items that fund this contracting process. Information may be provided in a range of formats, including using IATI, the Open Fiscal Data Standard or any other standard which provides structured data on budget sources. Human readable documents can be included using the planning.documents block.
-      - Where possible, this URI should return machine *and* human-readable representations of budget data.
-```
-
 ## Changelog
+
+### 2020-04-16
+
+* Remove guidance related to the `planning.budget` object. See [#701](https://github.com/open-contracting/standard/issues/701).
 
 ### 2018-05-03
 
