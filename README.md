@@ -6,6 +6,9 @@ In OCDS, project information is nested under the [`planning.budget`](https://sta
 
 * The amount reserved in the budget for a specific contracting process
 * The project the contract relates to, and the total value of that project
+* Sector classifications
+* Additional classifications
+* Project locations, with options for gazetteer or point locations
 
 This is particularly important in cases of Public-Private Partnerships and large infrastructure projects, where users might want to track all the contracting processes related to the large-scale project, and to understand the individual contracts in the context of their contracting process and overall project values.
 
@@ -22,7 +25,23 @@ This is particularly important in cases of Public-Private Partnerships and large
       "totalValue": {
         "amount": 600000000,
         "currency": "USD"
-      }
+      },
+      "sector": {
+        "scheme": "COFOG",
+        "description": "Road transportation",
+        "id": "04.5.1"
+      },
+      "locations": [
+        {
+          "description": "Local Authority Area: Halton Borough Council",
+          "gazetteer": {
+            "scheme": "GEONAMES",
+            "identifiers": [
+              "2647601"
+            ]
+          }
+        }
+      ]
     }
   }
 }
