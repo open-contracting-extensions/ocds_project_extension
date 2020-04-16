@@ -1,6 +1,6 @@
 {
   "name": {
-    "en": "Budget and Projects"
+    "en": "Project"
   },
   "description": {
     "en": "Adds a project object to the planning object to describe the project to which the contracting process is related, including the total value of the project (not to be confused with the total value of the contracting process)."
