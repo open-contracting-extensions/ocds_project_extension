@@ -1,4 +1,4 @@
-# Budget and projects extension
+# Project extension
 
 In the core OCDS, project information is nested within the `budget` building block. However, in some cases, budget management, and project management systems are separate, and it may be important to separately specify:
 
