@@ -49,6 +49,10 @@ This is particularly important in cases of Public-Private Partnerships and large
 
 ## Changelog
 
+### 2020-04-24
+
+* Add `minProperties`, `minItems` and/or `minLength` properties.
+
 ### 2020-04-16
 
 * Remove guidance related to the `planning.budget` object. See [#701](https://github.com/open-contracting/standard/issues/701).
