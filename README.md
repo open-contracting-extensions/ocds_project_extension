@@ -37,11 +37,6 @@ This is particularly important in cases of Public-Private Partnerships and large
               25.953400063796533,
               -100.01606973176307
             ]
-          },
-          "address": {
-            "locality": "Higueras",
-            "region": "Nuevo León",
-            "countryName": "México"
           }
         }
       ]
