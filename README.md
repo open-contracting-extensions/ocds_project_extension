@@ -29,7 +29,6 @@ This is particularly important in cases of Public-Private Partnerships and large
       },
       "locations": [
         {
-          "id": "465",
           "description": "Col. Ruperto Martínez, Higueras, N.L.",
           "geometry": {
             "type": "Point",
