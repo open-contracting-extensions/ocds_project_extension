@@ -12,7 +12,39 @@ In OCDS, project information is nested under the [`planning.budget`](https://sta
 
 This is particularly important in cases of Public-Private Partnerships and large infrastructure projects, where users might want to track all the contracting processes related to the large-scale project, and to understand the individual contracts in the context of their contracting process and overall project values.
 
-## Example
+## Examples
+
+### Infrastructure project
+
+```json
+{
+  "planning": {
+    "project": {
+      "id": "oc4ids-gx3fo2-000002",
+      "title": "Construcción de red de drenaje sanitario en diversas calles de la colonia Ruperto Martínez",
+      "description": "Construcción de red de drenaje sanitario consistente en excavación de 756 metros cúbicos para alojar la red de drenaje sanitario, suministro y colocación de 712 metros de tubería PVC tipo serie 20 pared solida, construcción de 15 pozos de visita y 30 descargas domiciliarias sencillas en la colonia Ruperto Martinez, en el municipio de Higueras, N.L.",
+      "totalValue": {
+        "amount": 4010130.1,
+        "currency": "MXN"
+      },
+      "locations": [
+        {
+          "description": "Col. Ruperto Martínez, Higueras, N.L.",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.953400063796533,
+              -100.01606973176307
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+### Public-Private Partnership project
 
 ```json
 {
@@ -48,6 +80,10 @@ This is particularly important in cases of Public-Private Partnerships and large
 ```
 
 ## Changelog
+
+### 2021-04-15
+
+* Add infrastructure project example
 
 ### 2020-04-24
 
