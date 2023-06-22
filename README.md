@@ -12,6 +12,8 @@ In OCDS, project information is nested under the [`planning.budget`](https://sta
 
 This is particularly important in cases of Public-Private Partnerships and large infrastructure projects, where users might want to track all the contracting processes related to the large-scale project, and to understand the individual contracts in the context of their contracting process and overall project values.
 
+This extension must be used with the [Location](https://extensions.open-contracting.org/en/extensions/location/master/) extension.
+
 ## Examples
 
 ### Infrastructure project
