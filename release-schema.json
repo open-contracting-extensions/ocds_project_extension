@@ -67,8 +67,8 @@
           "items": {
             "$ref": "#/definitions/Classification"
           },
-          "uniqueItems": true,
           "wholeListMerge": true,
+          "uniqueItems": true,
           "minItems": 1
         },
         "locations": {
@@ -78,8 +78,8 @@
           "items": {
             "$ref": "#/definitions/Location"
           },
-          "uniqueItems": true,
           "wholeListMerge": true,
+          "uniqueItems": true,
           "minItems": 1
         }
       },
