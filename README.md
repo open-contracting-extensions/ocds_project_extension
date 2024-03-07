@@ -1,87 +1,87 @@
 # Project
 
-This extension adds a `project` object to the `planning` object.
+This extension adds a `project` object to the `planning` object to describe the infrastructure or Public-Private Partnership (PPP) project to which the contracting process is related.
 
-In OCDS, project information is nested under the [`planning.budget`](https://standard.open-contracting.org/latest/en/schema/reference/#budget) object. However, in some cases, budget management systems and project management systems are separate, and it might be important to separately specify:
+The identifier for the infrastructure or PPP project to which a contracting process is related ought to be disclosed using the `planning/project/id` field.
 
-* The amount reserved in the budget for a specific contracting process
-* The project the contract relates to, and the total value of that project
-* Sector classifications
-* Additional classifications
-* Project locations, with options for gazetteer or point locations
-
-This is particularly important in cases of Public-Private Partnerships and large infrastructure projects, where users might want to track all the contracting processes related to the large-scale project, and to understand the individual contracts in the context of their contracting process and overall project values.
+The `planning/budget/projectID` field ought not be used to disclose the identifier for an infrastructure or PPP project. This field is used to disclose the identifier for a project in the national budget to which the contracting process is related. Since projects in the national budget might include many individual infrastructure projects, it is necessary to disclose these identifiers separately.
 
 This extension must be used with the [Location](https://extensions.open-contracting.org/en/extensions/location/master/) extension.
 
-## Examples
+## Example
 
-### Infrastructure project
+A buyer plans a contracting process for the design of a bridge.
+
+The contracting process is part of an infrastructure project which covers the design, construction and supervision of the bridge. Information about the infrastructure project is disclosed in `planning/project`.
+
+The buyer publishes a separate [Open Contracting for Infrastructure Data Standard](https://standard.open-contracting.org/infrastructure/) (OC4IDS) dataset, describing its infrastructure projects. `planning/project/id` and `planning/project/uri` reference the project's identifier and URI in the OC4IDS dataset. `sector` reference's the project's classification in the [OC4IDS sector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).
+
+The contracting process (and infrastructure project) are funded through a project in the national budget to upgrade the nation's highways. The name and identifier of the project in the national budget are disclosed in `budget/project` and `budget/projectID`.
 
 ```json
 {
+  "ocid": "ocds-213czf-0000",
+  "id": "1",
+  "date": "2024-01-01T00:00:00Z",
+  "tag": [
+    "planning"
+  ],
   "planning": {
     "project": {
-      "id": "oc4ids-gx3fo2-000002",
-      "title": "Construcción de red de drenaje sanitario en diversas calles de la colonia Ruperto Martínez",
-      "description": "Construcción de red de drenaje sanitario consistente en excavación de 756 metros cúbicos para alojar la red de drenaje sanitario, suministro y colocación de 712 metros de tubería PVC tipo serie 20 pared solida, construcción de 15 pozos de visita y 30 descargas domiciliarias sencillas en la colonia Ruperto Martinez, en el municipio de Higueras, N.L.",
+      "id": "oc4ids-bu3kcz-0000",
+      "title": "State Highway 1 Clutha River Bridge",
+      "description": "Design, construction and supervision of a new bridge crossing for State Highway 1 over the Clutha River.",
       "totalValue": {
-        "amount": 4010130.1,
-        "currency": "MXN"
+        "amount": 113000000,
+        "currency": "NZD"
       },
+      "uri": "http://example.com/projects/oc4ids-bu3kcz-0000.json",
+      "sector": {
+        "id": "transport.road",
+        "description": "Road transport, including roads, highways, streets, tunnels and bridges",
+        "scheme": "OC4IDS_ProjectSector"
+      },
+      "additionalClassifications": [
+        {
+          "id": "03.04.05",
+          "description": "Transport.roads.bridges",
+          "scheme": "My local scheme"
+        }
+      ],
       "locations": [
         {
-          "description": "Col. Ruperto Martínez, Higueras, N.L.",
+          "description": "Balclutha, Otago",
           "geometry": {
             "type": "Point",
             "coordinates": [
-              25.953400063796533,
-              -100.01606973176307
+              169.745,
+              -46.2359
             ]
           }
         }
       ]
+    },
+    "budget": {
+      "project": "National highway upgrade 2024-29",
+      "projectID": "001-001-002"
     }
+  },
+  "tender": {
+    "id": "1",
+    "title": "Bridge design"
   }
 }
 ```
 
-### Public-Private Partnership project
-
-```json
-{
-  "planning": {
-    "project": {
-      "title": "Example PPP",
-      "description": "The Example PPP project will guarantee the installation of a wholesale shared network that allows the provision of telecommunications services by current and future operators.",
-      "id": "example_ppp",
-      "uri": "http://communications.gov.example/projects/example_ppp",
-      "totalValue": {
-        "amount": 600000000,
-        "currency": "USD"
-      },
-      "sector": {
-        "scheme": "COFOG",
-        "description": "Road transportation",
-        "id": "04.5.1"
-      },
-      "locations": [
-        {
-          "description": "Local Authority Area: Halton Borough Council",
-          "gazetteer": {
-            "scheme": "GEONAMES",
-            "identifiers": [
-              "2647601"
-            ]
-          }
-        }
-      ]
-    }
-  }
-}
+```{admonition} Public-Private Partnership projects
+  Contracting processes related to PPP projects are modelled in the same way: information about the PPP project is disclosed in `planning/project`, not `planning/budget/project` or `planning/budget/projectID`.
 ```
 
 ## Changelog
+
+### 2024-03-08
+
+* Update guidance and examples
 
 ### 2021-04-15
 
