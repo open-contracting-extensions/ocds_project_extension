@@ -3,16 +3,19 @@
     "en": "Project"
   },
   "description": {
-    "en": "Adds a project object to the planning object to describe the project to which the contracting process is related, including the total value of the project (not to be confused with the total value of the contracting process)."
+    "en": "Adds a `project` object to the `planning` object to describe the infrastructure or Public-Private Partnership (PPP) project to which the contracting process is related."
   },
   "documentationUrl": {
     "en": "https://extensions.open-contracting.org/en/extensions/project/"
   },
   "compatibility": [
-    "1.1"
+    "1.2"
   ],
   "schemas": [
     "release-schema.json"
+  ],
+  "codelists": [
+    "+classificationScheme.csv"
   ],
   "dependencies": [
     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/master/extension.json"
