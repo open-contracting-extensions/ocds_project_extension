@@ -57,7 +57,7 @@
         },
         "sector": {
           "title": "Project sector",
-          "description": "A high-level categorization of the main sector this project relates to. Use of the [OC4IDS ProjectSector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector), with 'OC4IDS_ProjectSector' as the classification scheme is recommended.",
+          "description": "A high-level categorization of the main sector this project relates to. Use of the [OC4IDS ProjectSector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector), with 'oc4idsProjectSector' as the classification scheme is recommended.",
           "$ref": "#/definitions/Classification"
         },
         "additionalClassifications": {

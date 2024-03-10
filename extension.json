@@ -9,13 +9,13 @@
     "en": "https://extensions.open-contracting.org/en/extensions/project/"
   },
   "compatibility": [
-    "1.2"
+    "1.1"
   ],
   "schemas": [
     "release-schema.json"
   ],
   "codelists": [
-    "+classificationScheme.csv"
+    "+itemClassificationScheme.csv"
   ],
   "dependencies": [
     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/master/extension.json"

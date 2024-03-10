@@ -2,9 +2,9 @@
 
 This extension adds a `project` object to the `planning` object to describe the infrastructure or Public-Private Partnership (PPP) project to which the contracting process is related.
 
-The identifier for the infrastructure or PPP project to which a contracting process is related ought to be disclosed using the `planning/project/id` field.
+The identifier for the infrastructure or PPP project to which a contracting process is related ought to be disclosed using the `planning.project.id` field.
 
-The `planning/budget/projectID` field ought not be used to disclose the identifier for an infrastructure or PPP project. This field is used to disclose the identifier for a project in the national budget to which the contracting process is related. Since projects in the national budget might include many individual infrastructure projects, it is necessary to disclose these identifiers separately.
+The `planning.budget.projectID` field ought not be used to disclose the identifier for an infrastructure or PPP project. This field is used to disclose the identifier for a project in the national budget to which the contracting process is related. Since projects in the national budget might include many individual infrastructure projects, it is necessary to disclose these identifiers separately.
 
 This extension must be used with the [Location](https://extensions.open-contracting.org/en/extensions/location/master/) extension.
 
@@ -12,11 +12,11 @@ This extension must be used with the [Location](https://extensions.open-contract
 
 A buyer plans a contracting process for the design of a bridge.
 
-The contracting process is part of an infrastructure project which covers the design, construction and supervision of the bridge. Information about the infrastructure project is disclosed in `planning/project`.
+The contracting process is part of an infrastructure project which covers the design, construction and supervision of the bridge. Information about the infrastructure project is disclosed in `planning.project`.
 
-The buyer publishes a separate [Open Contracting for Infrastructure Data Standard](https://standard.open-contracting.org/infrastructure/) (OC4IDS) dataset, describing its infrastructure projects. `planning/project/id` and `planning/project/uri` reference the project's identifier and URI in the OC4IDS dataset. `sector` reference's the project's classification in the [OC4IDS sector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).
+The buyer publishes a separate [Open Contracting for Infrastructure Data Standard](https://standard.open-contracting.org/infrastructure/) (OC4IDS) dataset, describing its infrastructure projects. `planning.project.id` and `planning.project.uri` reference the project's identifier and URI in the OC4IDS dataset. `sector` reference's the project's classification in the [OC4IDS sector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).
 
-The contracting process (and infrastructure project) are funded through a project in the national budget to upgrade the nation's highways. The name and identifier of the project in the national budget are disclosed in `budget/project` and `budget/projectID`.
+The contracting process (and infrastructure project) are funded through a project in the national budget to upgrade the nation's highways. The name and identifier of the project in the national budget are disclosed in `budget.project` and `budget.projectID`.
 
 ```json
 {
@@ -39,7 +39,7 @@ The contracting process (and infrastructure project) are funded through a projec
       "sector": {
         "id": "transport.road",
         "description": "Road transport, including roads, highways, streets, tunnels and bridges",
-        "scheme": "OC4IDS_ProjectSector"
+        "scheme": "oc4idsProjectSector"
       },
       "additionalClassifications": [
         {
@@ -74,7 +74,7 @@ The contracting process (and infrastructure project) are funded through a projec
 ```
 
 ```{admonition} Public-Private Partnership projects
-  Contracting processes related to PPP projects are modelled in the same way: information about the PPP project is disclosed in `planning/project`, not `planning/budget/project` or `planning/budget/projectID`.
+  Contracting processes related to PPP projects are modelled in the same way: information about the PPP project is disclosed in `planning.project`, not `planning.budget.project` or `planning.budget.projectID`.
 ```
 
 ## Changelog
