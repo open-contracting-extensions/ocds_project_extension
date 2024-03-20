@@ -1,10 +1,14 @@
 # Project
 
-This extension adds a `project` object to the `planning` object to describe the infrastructure or Public-Private Partnership (PPP) project to which the contracting process is related.
+A contracting process can relate to several types of project, including:
 
-The identifier for the infrastructure or PPP project to which a contracting process is related ought to be disclosed using the `planning.project.id` field.
+* An infrastructure project, as [defined in the Open Contracting for Infrastructure Data Standard](https://standard.open-contracting.org/infrastructure/latest/en/projects/#what-is-a-project) (OC4IDS), like the construction of a bridge
+* A larger programme of work, which can have many infrastructure projects, like the construction of a highway of which the bridge is a part
+* A public-private partnership project, as described by [OCDS for PPPs](https://standard.open-contracting.org/profiles/ppp/latest/en/)
 
-The `planning.budget.projectID` field ought not be used to disclose the identifier for an infrastructure or PPP project. This field is used to disclose the identifier for a project in the national budget to which the contracting process is related. Since projects in the national budget might include many individual infrastructure projects, it is necessary to disclose these identifiers separately.
+This extension adds a `planning.project` object to describe the infrastructure or Public-Private Partnership (PPP) project to which a contracting process is related. The identifier for the project ought to be disclosed in `planning.project.id`.
+
+The `planning.budget.projectID` field ought not be used to disclose the identifier for an infrastructure or PPP project. This field is used to disclose the identifier for a larger programme of work as it appears in a budget, like a national or state budget. Since the larger programmes of work that appear in budgets might include many individual infrastructure projects, it is necessary to disclose these identifiers separately.
 
 This extension must be used with the [Location](https://extensions.open-contracting.org/en/extensions/location/master/) extension.
 
@@ -14,9 +18,9 @@ A buyer plans a contracting process for the design of a bridge.
 
 The contracting process is part of an infrastructure project which covers the design, construction and supervision of the bridge. Information about the infrastructure project is disclosed in `planning.project`.
 
-The buyer publishes a separate [Open Contracting for Infrastructure Data Standard](https://standard.open-contracting.org/infrastructure/) (OC4IDS) dataset, describing its infrastructure projects. `planning.project.id` and `planning.project.uri` reference the project's identifier and URI in the OC4IDS dataset. `sector` reference's the project's classification in the [OC4IDS sector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).
+The buyer publishes a separate OC4IDS dataset, describing its infrastructure projects. `planning.project.id` and `planning.project.uri` reference the project's identifier and URI in the OC4IDS dataset. `sector` reference's the project's classification in the [OC4IDS sector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).
 
-The contracting process (and infrastructure project) are funded through a project in the national budget to upgrade the nation's highways. The name and identifier of the project in the national budget are disclosed in `budget.project` and `budget.projectID`.
+The contracting process and infrastructure project are funded through a larger programme of work to upgrade the nation's highways. The name and identifier of the larger programme of work as it appears in the national budget are disclosed in `budget.project` and `budget.projectID`.
 
 ```json
 {
@@ -38,13 +42,13 @@ The contracting process (and infrastructure project) are funded through a projec
       "uri": "http://example.com/projects/oc4ids-bu3kcz-0000.json",
       "sector": {
         "id": "transport.road",
-        "description": "Road transport, including roads, highways, streets, tunnels and bridges",
+        "description": "Road transport, including roads, highways, streets, tunnels and bridges.",
         "scheme": "oc4idsProjectSector"
       },
       "additionalClassifications": [
         {
           "id": "03.04.05",
-          "description": "Transport.roads.bridges",
+          "description": "Bridges for road transport.",
           "scheme": "My local scheme"
         }
       ],
@@ -62,7 +66,7 @@ The contracting process (and infrastructure project) are funded through a projec
       ]
     },
     "budget": {
-      "project": "National highway upgrade 2024-29",
+      "project": "National Highway Upgrade",
       "projectID": "001-001-002"
     }
   },
