@@ -18,7 +18,7 @@ A buyer plans a contracting process for the design of a bridge.
 
 The contracting process is part of an infrastructure project which covers the design, construction and supervision of the bridge. Information about the infrastructure project is disclosed in `planning.project`.
 
-The buyer publishes a separate OC4IDS dataset, describing its infrastructure projects. `planning.project.id` and `planning.project.uri` reference the project's identifier and URI in the OC4IDS dataset. `sector` reference's the project's classification in the [OC4IDS sector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).
+The buyer publishes a separate OC4IDS dataset, describing its infrastructure projects. `planning.project.id` and `planning.project.uri` reference the project's identifier and URI in the OC4IDS dataset. `planning.project.sector` references the project's classification in the [OC4IDS sector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).
 
 The contracting process and infrastructure project are funded through a larger programme of work to upgrade the nation's highways. The name and identifier of the larger programme of work as it appears in the national budget are disclosed in `budget.project` and `budget.projectID`.
 
