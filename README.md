@@ -100,18 +100,18 @@ The contracting process and infrastructure project are funded through a programm
 
 ### 2018-05-03
 
-* Add additional guidance on the use of OCDS fields in the context of this extension
+* Add additional guidance on the use of OCDS fields in the context of this extension.
 
 ### 2017-12-29
 
-* Remove the repetition of OCDS fields in this extension
+* Remove the repetition of OCDS fields in this extension.
 
 ### 2017-07-08
 
-* Add multilingual support for `Project.title` fields
-* Remove multilingual support for non-existent `Project.source` and `Project.project` fields
-* Restore `Budget.project` and `Budget.projectID` fields
-* Remove obsolete `mergeStrategy` properties
+* Add multilingual support for `Project.title` fields.
+* Remove multilingual support for non-existent `Project.source` and `Project.project` fields.
+* Restore `Budget.project` and `Budget.projectID` fields.
+* Remove obsolete `mergeStrategy` properties.
 
 ## Issues
 
