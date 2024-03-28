@@ -3,7 +3,7 @@
     "en": "Project"
   },
   "description": {
-    "en": "Adds a `project` object to the `planning` object to describe the infrastructure or Public-Private Partnership (PPP) project to which the contracting process is related."
+    "en": "Adds a project object to the planning object to describe the infrastructure or Public-Private Partnership (PPP) project to which the contracting process is related."
   },
   "documentationUrl": {
     "en": "https://extensions.open-contracting.org/en/extensions/project/"
