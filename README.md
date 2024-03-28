@@ -1,6 +1,6 @@
 # Project
 
-A contracting process can relate to several types of project, including:
+Contracting processes can relate to different types of projects, including:
 
 * An infrastructure project, as [defined in the Open Contracting for Infrastructure Data Standard](https://standard.open-contracting.org/infrastructure/latest/en/projects/#what-is-a-project) (OC4IDS), like the construction of a bridge
 * A larger programme of work, which can have many infrastructure projects, like the construction of a highway of which the bridge is a part
