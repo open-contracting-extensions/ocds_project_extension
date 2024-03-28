@@ -2,13 +2,13 @@
 
 Contracting processes can relate to different types of projects, including:
 
-* An infrastructure project, as [defined in the Open Contracting for Infrastructure Data Standards Toolkit](https://standard.open-contracting.org/infrastructure/latest/en/projects/#what-is-a-project) (OC4IDS), like the construction of a bridge
-* A larger programme of work, which can have many infrastructure projects, like the construction of a highway of which the bridge is a part
+* An infrastructure project, as defined by the [Open Contracting for Infrastructure Data Standards Toolkit](https://standard.open-contracting.org/infrastructure/latest/en/projects/#what-is-a-project) (OC4IDS), like the construction of a bridge
+* A programme of work, which can include many infrastructure projects, like the construction of a highway of which the bridge is a part
 * A public-private partnership project, as described by [OCDS for PPPs](https://standard.open-contracting.org/profiles/ppp/latest/en/)
 
-This extension adds a `planning.project` object to describe the infrastructure or public-private partnership (PPP) project to which a contracting process is related. The identifier for the project ought to be disclosed in `planning.project.id`.
+This extension adds a `planning.project` object to describe the **infrastructure** or **public-private partnership** (PPP) project to which a contracting process is related. The identifier of the project ought to be disclosed in `planning.project.id`.
 
-The `planning.budget.projectID` field ought not be used to disclose the identifier for an infrastructure or PPP project. This field is used to disclose the identifier for a larger programme of work as it appears in a budget, like a national or state budget. Since the larger programmes of work that appear in budgets might include many individual infrastructure projects, it is necessary to disclose these identifiers separately.
+The `planning.budget.projectID` field ought to not be used to disclose the identifier for an infrastructure or PPP project. This field is used to disclose the identifier for a programme of work as it appears in a budget, like a national or state budget. Since such programmes of work can include many infrastructure projects, it is necessary to disclose their identifiers separately.
 
 This extension must be used with the [Location](https://extensions.open-contracting.org/en/extensions/location/master/) extension.
 
@@ -16,11 +16,11 @@ This extension must be used with the [Location](https://extensions.open-contract
 
 A buyer plans a contracting process for the design of a bridge.
 
-The contracting process is part of an infrastructure project which covers the design, construction and supervision of the bridge. Information about the infrastructure project is disclosed in `planning.project`.
+This contracting process is part of an infrastructure project, which covers the design, construction and supervision of the bridge. Information about the infrastructure project is disclosed in the `planning.project` object. For example, the `planning.project.sector` field describes the project's sector, using the [OC4IDS projectSector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).
 
-The buyer publishes a separate OC4IDS dataset, describing its infrastructure projects. `planning.project.id` and `planning.project.uri` reference the project's identifier and URI in the OC4IDS dataset. `planning.project.sector` references the project's classification in the [OC4IDS sector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).
+A separate OC4IDS dataset describes infrastructure projects in greater detail. In the contracting process, `planning.project.id` and `planning.project.uri` reference the project's identifier and URI in that OC4IDS dataset.
 
-The contracting process and infrastructure project are funded through a larger programme of work to upgrade the nation's highways. The name and identifier of the larger programme of work as it appears in the national budget are disclosed in `budget.project` and `budget.projectID`.
+The contracting process and infrastructure project are funded through a programme of work to upgrade the nation's highways. The name and identifier of the programme of work as it appears in the national budget are disclosed in the `budget.project` and `budget.projectID` fields.
 
 *Note: Contracting processes related to public-private partnership projects are modelled in the same way. Information about the PPP project is disclosed in `planning.project`, not `planning.budget.project` or `planning.budget.projectID`.*
 
