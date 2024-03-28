@@ -4,19 +4,19 @@
       "properties": {
         "project": {
           "title": "Project information",
-          "description": "The project section can be used to describe the relationship between this contracting process and a project or programme of work.",
+          "description": "Information about the infrastructure or public-private partnership project to which the planning process is related.",
           "$ref": "#/definitions/Project"
         }
       }
     },
     "Project": {
       "title": "Project information",
-      "description": "A project or programme of work.",
+      "description": "Information about the infrastructure or public-private partnership project to which a planning process is related.",
       "type": "object",
       "properties": {
         "id": {
-          "title": "Project identifier",
-          "description": "An externally provided identifier for the project. This might be drawn from a projects register, or may be based on the canonical version of a project name. Project IDs should be unique to a publisher. URIs can be used. ",
+          "title": "Identifier",
+          "description": "An externally provided identifier for the project. This can be a URI, an identifier from a projects register, or based on the canonical version of the project's name. Project identifiers should be unique within the scope of the publication.",
           "type": [
             "string",
             "null"
@@ -24,8 +24,8 @@
           "minLength": 1
         },
         "title": {
-          "title": "Project title",
-          "description": "The name of the project to which this contracting process relates. Some organizations maintain a registry of projects, and the data should use the name by which the project is known in that registry. ",
+          "title": "Title",
+          "description": "The name of the project. If a projects register is available, this should be the same as the project's name in that register.",
           "type": [
             "string",
             "null"
@@ -33,8 +33,8 @@
           "minLength": 1
         },
         "description": {
-          "title": "Project description",
-          "description": "A short free text description of the project.",
+          "title": "Description",
+          "description": "A short description of the project.",
           "type": [
             "string",
             "null"
@@ -42,13 +42,13 @@
           "minLength": 1
         },
         "totalValue": {
-          "title": "Total project value",
-          "description": "The total anticipated value of the project over it's lifetime. ",
+          "title": "Total value",
+          "description": "The total anticipated value of the project over its lifetime.",
           "$ref": "#/definitions/Value"
         },
         "uri": {
-          "title": "Linked project information",
-          "description": "A URI pointing to further information about this project.",
+          "title": "URI",
+          "description": "The URI of a resource with additional information about the project.",
           "type": [
             "string",
             "null"
@@ -56,13 +56,13 @@
           "format": "uri"
         },
         "sector": {
-          "title": "Project sector",
-          "description": "A high-level categorization of the main sector this project relates to. It is recommended to use the scheme 'oc4idsProjectSector' and codes from the [OC4IDS projectSector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).",
+          "title": "Sector",
+          "description": "The primary sector to which the project relates. It is recommended to use the scheme 'oc4idsProjectSector' and codes from the [OC4IDS projectSector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).",
           "$ref": "#/definitions/Classification"
         },
         "additionalClassifications": {
-          "title": "Additional sector classifications",
-          "description": "Additional project classification, by other sector classifications, or using other classification schemes (e.g. against a strategic framework).",
+          "title": "Additional classifications",
+          "description": "Additional classifications for the project. For example, a sector or strategic framework classification.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Classification"
@@ -72,8 +72,8 @@
           "minItems": 1
         },
         "locations": {
-          "title": "Project location",
-          "description": "Information about the location where a project is taking place.",
+          "title": "Locations",
+          "description": "Information about the locations where the project is taking place.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Location"

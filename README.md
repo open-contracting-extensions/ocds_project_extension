@@ -1,28 +1,28 @@
 # Project
 
-Contracting processes can relate to different types of projects, including:
+Planning processes can relate to different types of projects, including:
 
 * An infrastructure project, as defined by the [Open Contracting for Infrastructure Data Standards Toolkit](https://standard.open-contracting.org/infrastructure/latest/en/projects/#what-is-a-project) (OC4IDS), like the construction of a bridge
 * A programme of work, which can include many infrastructure projects, like the construction of a highway of which the bridge is a part
 * A public-private partnership project, as described by [OCDS for PPPs](https://standard.open-contracting.org/profiles/ppp/latest/en/)
 
-This extension adds a `planning.project` object to describe the **infrastructure** or **public-private partnership** (PPP) project to which a contracting process is related. The identifier of the project ought to be disclosed in `planning.project.id`.
+This extension adds a `planning.project` object to describe the **infrastructure** or **public-private partnership** (PPP) project to which a planning process is related. The identifier of the project ought to be disclosed in `planning.project.id`.
 
-The `planning.budget.projectID` field ought to not be used to disclose the identifier for an infrastructure or PPP project. This field is used to disclose the identifier for a programme of work as it appears in a budget, like a national or state budget. Since such programmes of work can include many infrastructure projects, it is necessary to disclose their identifiers separately.
+The `planning.budget.projectID` field ought to not be used to disclose the identifier of an infrastructure or PPP project. Rather, this field is used to disclose the identifier of a programme of work as it appears in a budget, like a national or state budget. Since such programmes of work can include many infrastructure projects, it is necessary to disclose their identifiers separately.
 
 This extension must be used with the [Location](https://extensions.open-contracting.org/en/extensions/location/master/) extension.
 
 ## Example
 
-A buyer plans a contracting process for the design of a bridge.
+A buyer announces a planning process for the design of a bridge.
 
-This contracting process is part of an infrastructure project, which covers the design, construction and supervision of the bridge. Information about the infrastructure project is disclosed in the `planning.project` object. For example, the `planning.project.sector` field describes the project's sector, using the [OC4IDS projectSector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).
+This planning process is part of an infrastructure project, which covers the design, construction and supervision of the bridge. Information about the infrastructure project is disclosed in the `planning.project` object. For example, the `planning.project.sector` field describes the project's sector, using the [OC4IDS projectSector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).
 
-A separate OC4IDS dataset describes infrastructure projects in greater detail. In the contracting process, `planning.project.id` and `planning.project.uri` reference the project's identifier and URI in that OC4IDS dataset.
+A separate OC4IDS dataset describes infrastructure projects in greater detail. In the planning process, `planning.project.id` and `planning.project.uri` reference the project's identifier and URI in that OC4IDS dataset.
 
-The contracting process and infrastructure project are funded through a programme of work to upgrade the nation's highways. The name and identifier of the programme of work as it appears in the national budget are disclosed in the `budget.project` and `budget.projectID` fields.
+The planning process and infrastructure project are funded through a programme of work to upgrade the nation's highways. The name and identifier of the programme of work as it appears in the national budget are disclosed in the `budget.project` and `budget.projectID` fields.
 
-*Note: Contracting processes related to public-private partnership projects are modelled in the same way. Information about the PPP project is disclosed in `planning.project`, not `planning.budget.project` or `planning.budget.projectID`.*
+*Note: Planning processes related to public-private partnership projects are modelled in the same way. Information about the PPP project is disclosed in `planning.project`, not `planning.budget.project` or `planning.budget.projectID`.*
 
 ```json
 {
