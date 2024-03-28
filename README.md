@@ -81,9 +81,10 @@ The contracting process and infrastructure project are funded through a programm
 
 ## Changelog
 
-### 2024-03-08
+### 2024-03-28
 
 * Recommend use of the 'oc4idsProjectSector' classification scheme for project sector.
+* [Abandon in-file translations](https://github.com/open-contracting/standard/pull/1665).
 
 ### 2021-04-15
 
