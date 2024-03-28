@@ -2,7 +2,7 @@
 
 Contracting processes can relate to different types of projects, including:
 
-* An infrastructure project, as [defined in the Open Contracting for Infrastructure Data Standard](https://standard.open-contracting.org/infrastructure/latest/en/projects/#what-is-a-project) (OC4IDS), like the construction of a bridge
+* An infrastructure project, as [defined in the Open Contracting for Infrastructure Data Standards Toolkit](https://standard.open-contracting.org/infrastructure/latest/en/projects/#what-is-a-project) (OC4IDS), like the construction of a bridge
 * A larger programme of work, which can have many infrastructure projects, like the construction of a highway of which the bridge is a part
 * A public-private partnership project, as described by [OCDS for PPPs](https://standard.open-contracting.org/profiles/ppp/latest/en/)
 
