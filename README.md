@@ -1,91 +1,94 @@
 # Project
 
-This extension adds a `project` object to the `planning` object.
+Planning processes can relate to different types of projects, including:
 
-In OCDS, project information is nested under the [`planning.budget`](https://standard.open-contracting.org/latest/en/schema/reference/#budget) object. However, in some cases, budget management systems and project management systems are separate, and it might be important to separately specify:
+* An infrastructure project, as defined by the [Open Contracting for Infrastructure Data Standards Toolkit](https://standard.open-contracting.org/infrastructure/latest/en/projects/#what-is-a-project) (OC4IDS), like the construction of a bridge
+* A programme of work, which can include many infrastructure projects, like the construction of a highway of which the bridge is a part
+* A public-private partnership project, as described by [OCDS for PPPs](https://standard.open-contracting.org/profiles/ppp/latest/en/)
 
-* The amount reserved in the budget for a specific contracting process
-* The project the contract relates to, and the total value of that project
-* Sector classifications
-* Additional classifications
-* Project locations, with options for gazetteer or point locations
+This extension adds a `planning.project` object to describe the **infrastructure** or **public-private partnership** (PPP) project to which a planning process is related. The identifier of the project ought to be disclosed in `planning.project.id`.
 
-This is particularly important in cases of Public-Private Partnerships and large infrastructure projects, where users might want to track all the contracting processes related to the large-scale project, and to understand the individual contracts in the context of their contracting process and overall project values.
+The `planning.budget.projectID` field ought to not be used to disclose the identifier of an infrastructure or PPP project. Rather, this field is used to disclose the identifier of a programme of work as it appears in a budget, like a national or state budget. Since such programmes of work can include many infrastructure projects, it is necessary to disclose their identifiers separately.
 
 This extension must be used with the [Location](https://extensions.open-contracting.org/en/extensions/location/master/) extension.
 
-## Examples
+## Example
 
-### Infrastructure project
+A buyer announces a planning process for the design of a bridge.
+
+This planning process is part of an infrastructure project, which covers the design, construction and supervision of the bridge. Information about the infrastructure project is disclosed in the `planning.project` object. For example, the `planning.project.sector` field describes the project's sector, using the [OC4IDS projectSector codelist](https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector).
+
+A separate OC4IDS dataset describes infrastructure projects in greater detail. In the planning process, `planning.project.id` and `planning.project.uri` reference the project's identifier and URI in that OC4IDS dataset.
+
+The planning process and infrastructure project are funded through a programme of work to upgrade the nation's highways. The name and identifier of the programme of work as it appears in the national budget are disclosed in the `budget.project` and `budget.projectID` fields.
+
+*Note: Planning processes related to public-private partnership projects are modelled in the same way. Information about the PPP project is disclosed in `planning.project`, not `planning.budget.project` or `planning.budget.projectID`.*
 
 ```json
 {
+  "ocid": "ocds-213czf-0000",
+  "id": "1",
+  "date": "2024-01-01T00:00:00Z",
+  "tag": [
+    "planning"
+  ],
   "planning": {
     "project": {
-      "id": "oc4ids-gx3fo2-000002",
-      "title": "Construcción de red de drenaje sanitario en diversas calles de la colonia Ruperto Martínez",
-      "description": "Construcción de red de drenaje sanitario consistente en excavación de 756 metros cúbicos para alojar la red de drenaje sanitario, suministro y colocación de 712 metros de tubería PVC tipo serie 20 pared solida, construcción de 15 pozos de visita y 30 descargas domiciliarias sencillas en la colonia Ruperto Martinez, en el municipio de Higueras, N.L.",
+      "id": "oc4ids-bu3kcz-0000",
+      "title": "State Highway 1 Clutha River Bridge",
+      "description": "Design, construction and supervision of a new bridge crossing for State Highway 1 over the Clutha River.",
       "totalValue": {
-        "amount": 4010130.1,
-        "currency": "MXN"
+        "amount": 113000000,
+        "currency": "NZD"
       },
+      "uri": "http://example.com/projects/oc4ids-bu3kcz-0000.json",
+      "sector": {
+        "id": "transport.road",
+        "description": "Road transport, including roads, highways, streets, tunnels and bridges.",
+        "scheme": "oc4idsProjectSector"
+      },
+      "additionalClassifications": [
+        {
+          "id": "03.04.05",
+          "description": "Bridges for road transport.",
+          "scheme": "My local scheme"
+        }
+      ],
       "locations": [
         {
-          "description": "Col. Ruperto Martínez, Higueras, N.L.",
+          "description": "Balclutha, Otago",
           "geometry": {
             "type": "Point",
             "coordinates": [
-              25.953400063796533,
-              -100.01606973176307
+              169.745,
+              -46.2359
             ]
           }
         }
       ]
+    },
+    "budget": {
+      "project": "National Highway Upgrade",
+      "projectID": "001-001-002"
     }
-  }
-}
-```
-
-### Public-Private Partnership project
-
-```json
-{
-  "planning": {
-    "project": {
-      "title": "Example PPP",
-      "description": "The Example PPP project will guarantee the installation of a wholesale shared network that allows the provision of telecommunications services by current and future operators.",
-      "id": "example_ppp",
-      "uri": "http://communications.gov.example/projects/example_ppp",
-      "totalValue": {
-        "amount": 600000000,
-        "currency": "USD"
-      },
-      "sector": {
-        "scheme": "COFOG",
-        "description": "Road transportation",
-        "id": "04.5.1"
-      },
-      "locations": [
-        {
-          "description": "Local Authority Area: Halton Borough Council",
-          "gazetteer": {
-            "scheme": "GEONAMES",
-            "identifiers": [
-              "2647601"
-            ]
-          }
-        }
-      ]
-    }
+  },
+  "tender": {
+    "id": "1",
+    "title": "Bridge design"
   }
 }
 ```
 
 ## Changelog
 
+### 2024-03-28
+
+* Recommend use of the 'oc4idsProjectSector' classification scheme for project sector.
+* [Abandon in-file translations](https://github.com/open-contracting/standard/pull/1665).
+
 ### 2021-04-15
 
-* Add infrastructure project example
+* Add infrastructure project example.
 
 ### 2020-04-24
 
@@ -97,18 +100,18 @@ This extension must be used with the [Location](https://extensions.open-contract
 
 ### 2018-05-03
 
-* Add additional guidance on the use of OCDS fields in the context of this extension
+* Add additional guidance on the use of OCDS fields in the context of this extension.
 
 ### 2017-12-29
 
-* Remove the repetition of OCDS fields in this extension
+* Remove the repetition of OCDS fields in this extension.
 
 ### 2017-07-08
 
-* Add multilingual support for `Project.title` fields
-* Remove multilingual support for non-existent `Project.source` and `Project.project` fields
-* Restore `Budget.project` and `Budget.projectID` fields
-* Remove obsolete `mergeStrategy` properties
+* Add multilingual support for `Project.title` fields.
+* Remove multilingual support for non-existent `Project.source` and `Project.project` fields.
+* Restore `Budget.project` and `Budget.projectID` fields.
+* Remove obsolete `mergeStrategy` properties.
 
 ## Issues
 
