@@ -22,6 +22,8 @@ The buyer publishes a separate OC4IDS dataset, describing its infrastructure pro
 
 The contracting process and infrastructure project are funded through a larger programme of work to upgrade the nation's highways. The name and identifier of the larger programme of work as it appears in the national budget are disclosed in `budget.project` and `budget.projectID`.
 
+*Note: Contracting processes related to public-private partnership projects are modelled in the same way. Information about the PPP project is disclosed in `planning.project`, not `planning.budget.project` or `planning.budget.projectID`.*
+
 ```json
 {
   "ocid": "ocds-213czf-0000",
@@ -77,19 +79,15 @@ The contracting process and infrastructure project are funded through a larger p
 }
 ```
 
-```{admonition} Public-private partnership projects
-  Contracting processes related to PPP projects are modelled in the same way: information about the PPP project is disclosed in `planning.project`, not `planning.budget.project` or `planning.budget.projectID`.
-```
-
 ## Changelog
 
 ### 2024-03-08
 
-* Update guidance and examples
+* Recommend use of the 'oc4idsProjectSector' classification scheme for project sector.
 
 ### 2021-04-15
 
-* Add infrastructure project example
+* Add infrastructure project example.
 
 ### 2020-04-24
 
