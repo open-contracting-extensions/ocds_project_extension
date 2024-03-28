@@ -6,7 +6,7 @@ A contracting process can relate to several types of project, including:
 * A larger programme of work, which can have many infrastructure projects, like the construction of a highway of which the bridge is a part
 * A public-private partnership project, as described by [OCDS for PPPs](https://standard.open-contracting.org/profiles/ppp/latest/en/)
 
-This extension adds a `planning.project` object to describe the infrastructure or Public-Private Partnership (PPP) project to which a contracting process is related. The identifier for the project ought to be disclosed in `planning.project.id`.
+This extension adds a `planning.project` object to describe the infrastructure or public-private partnership (PPP) project to which a contracting process is related. The identifier for the project ought to be disclosed in `planning.project.id`.
 
 The `planning.budget.projectID` field ought not be used to disclose the identifier for an infrastructure or PPP project. This field is used to disclose the identifier for a larger programme of work as it appears in a budget, like a national or state budget. Since the larger programmes of work that appear in budgets might include many individual infrastructure projects, it is necessary to disclose these identifiers separately.
 
@@ -77,7 +77,7 @@ The contracting process and infrastructure project are funded through a larger p
 }
 ```
 
-```{admonition} Public-Private Partnership projects
+```{admonition} Public-private partnership projects
   Contracting processes related to PPP projects are modelled in the same way: information about the PPP project is disclosed in `planning.project`, not `planning.budget.project` or `planning.budget.projectID`.
 ```
 
